@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multimodal Emotion AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <div>
+                <h2>Multimodal</h2>
+                <h2>Emotion AI</h2>
+            </div>
+
+        </div>
+
+        <p class="sidebar-description">
+            Detect emotions from speech, text and facial expressions
+        </p>
+
+
+        <nav class="sidebar-menu">
+
+            <div class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>History</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <div class="topbar">
+
+            <div></div>
+
+            <div class="user-area">
+
+                <div class="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+                <span>User</span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    AI Multimodal Emotion Recognition
+                </h1>
+
+                <p>
+                    Upload audio, enter text and upload an image to detect emotions using AI
+                </p>
+
+            </div>
+
+
+            <div class="header-badge">
+
+                <i class="fa-solid fa-wave-square"></i>
+
+                <span>Three modalities</span>
+
+                <span>|</span>
+
+                <span>One emotion</span>
+
+                <span>|</span>
+
+                <span>Smarter AI</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INPUT SECTION -->
+
+        <section class="section-card">
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+
+                <div>
+
+                    <h2>1. Provide Input</h2>
+
+                    <p>
+                        Upload audio, image and/or enter text below
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="input-grid">
+
+
+                <!-- AUDIO -->
+
+                <div class="input-card audio-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <i class="fa-solid fa-microphone"></i>
+                            <span>Audio</span>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check check"></i>
+
+                    </div>
+
+
+                    <label class="upload-area">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <strong>
+                            Choose an audio file
+                        </strong>
+
+                        <small>
+                            WAV, MP3, etc.
+                        </small>
+
+                        <input
+                            type="file"
+                            id="audioInput"
+                            accept="audio/*"
+                        >
+
+                    </label>
+
+
+                    <div
+                        class="selected-file"
+                        id="audioFileName"
+                    >
+                        <i class="fa-solid fa-music"></i>
+
+                        <div>
+                            <strong>No audio selected</strong>
+                            <small>Select an audio file</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TEXT -->
+
+                <div class="input-card text-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Text</span>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check check"></i>
+
+                    </div>
+
+
+                    <textarea
+                        id="textInput"
+                        maxlength="500"
+                        placeholder="Type something like: I am very happy today!"
+                    ></textarea>
+
+
+                    <div class="character-count">
+                        <span id="charCount">0</span>/500
+                    </div>
+
+                </div>
+
+
+
+                <!-- IMAGE -->
+
+                <div class="input-card image-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <i class="fa-solid fa-image"></i>
+                            <span>Face Image</span>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check check"></i>
+
+                    </div>
+
+
+                    <label class="upload-area">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <strong>
+                            Choose an image
+                        </strong>
+
+                        <small>
+                            JPG, PNG, JPEG, etc.
+                        </small>
+
+                        <input
+                            type="file"
+                            id="imageInput"
+                            accept="image/*"
+                        >
+
+                    </label>
+
+
+                    <div
+                        class="selected-file"
+                        id="imageFileName"
+                    >
+
+                        <i class="fa-solid fa-image"></i>
+
+                        <div>
+                            <strong>No image selected</strong>
+                            <small>Select a face image</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <button
+                id="predictButton"
+                class="analyze-button"
+            >
+
+                <i class="fa-solid fa-play"></i>
+
+                Analyze Emotion
+
+            </button>
+
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <span>AI is analyzing your emotions...</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESULTS -->
+
+        <section
+            id="result"
+            class="section-card hidden"
+        >
+
+            <div class="section-title">
+
+                <div class="section-icon results-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <div>
+
+                    <h2>2. Results</h2>
+
+                    <p>
+                        Emotion predictions from individual modalities and fusion methods
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="results-layout">
+
+
+                <!-- INDIVIDUAL MODELS -->
+
+                <div class="individual-results">
+
+                    <h3 class="sub-title">
+                        Individual Model Predictions
+                    </h3>
+
+
+                    <div class="prediction-grid">
+
+
+                        <!-- AUDIO -->
+
+                        <div class="prediction-card audio-result">
+
+                            <div class="prediction-header">
+
+                                <div>
+                                    <i class="fa-solid fa-microphone"></i>
+                                    Audio Prediction
+                                </div>
+
+                            </div>
+
+
+                            <div class="waveform">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <div
+                                id="audioProbabilities"
+                                class="probability-list"
+                            ></div>
+
+
+                            <div class="prediction-bottom">
+
+                                Predicted Emotion:
+
+                                <strong id="audioEmotion">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- TEXT -->
+
+                        <div class="prediction-card text-result">
+
+                            <div class="prediction-header">
+
+                                <div>
+                                    <i class="fa-solid fa-file-lines"></i>
+                                    Text Prediction
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="text-preview"
+                                id="textPreview"
+                            >
+                                —
+                            </div>
+
+
+                            <div
+                                id="textProbabilities"
+                                class="probability-list"
+                            ></div>
+
+
+                            <div class="prediction-bottom">
+
+                                Predicted Emotion:
+
+                                <strong id="textEmotion">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- FACE -->
+
+                        <div class="prediction-card face-result">
+
+                            <div class="prediction-header">
+
+                                <div>
+                                    <i class="fa-solid fa-face-smile"></i>
+                                    Face Prediction
+                                </div>
+
+                            </div>
+
+
+                            <div class="face-preview">
+
+                                <img
+                                    id="facePreview"
+                                    src=""
+                                    alt="Face preview"
+                                >
+
+                            </div>
+
+
+                            <div
+                                id="faceProbabilities"
+                                class="probability-list"
+                            ></div>
+
+
+                            <div class="prediction-bottom">
+
+                                Predicted Emotion:
+
+                                <strong id="faceEmotion">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FUSION -->
+
+                <div class="fusion-results">
+
+                    <h3 class="sub-title">
+                        Fusion Results
+                    </h3>
+
+
+                    <div class="fusion-card early-fusion">
+
+                        <div class="fusion-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Early Fusion</h4>
+
+                            <strong id="earlyFusionEmotion">
+                                —
+                            </strong>
+
+                            <p>
+                                Feature-level combination
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="fusion-card late-fusion">
+
+                        <div class="fusion-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Late Fusion</h4>
+
+                            <strong id="lateFusionEmotion">
+                                —
+                            </strong>
+
+                            <p>
+                                Decision-level combination
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FINAL -->
+
+                    <div class="final-emotion-card">
+
+                        <div class="final-title">
+                            Final Emotion
+                        </div>
+
+
+                        <div class="final-emotion-content">
+
+                            <div
+                                id="finalEmoji"
+                                class="final-emoji"
+                            >
+                                😊
+                            </div>
+
+                            <div>
+
+                                <div
+                                    id="finalEmotion"
+                                    class="final-emotion"
+                                >
+                                    —
+                                </div>
+
+                                <div class="final-confidence">
+
+                                    Confidence:
+
+                                    <strong id="finalConfidence">
+                                        0
+                                    </strong>%
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="final-progress-container">
+
+                            <div
+                                id="finalProgress"
+                                class="final-progress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
