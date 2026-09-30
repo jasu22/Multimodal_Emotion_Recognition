@@ -22,3 +22,5 @@ __pycache__/
 
 # Large/generated files
 *.tmp
+
+temp_audio.wav
